@@ -12,12 +12,12 @@
         Nilai 1 : <input type="number" name="l12"><br><br>
         Nilai 2 : <input type="number" name="l22"><br><br>
 
-        <select name="rumus" id="">
-            <option value="kali">*</option>
-            <option value="tambah">+</option>
-            <option value="bagi">/</option>
-            <option value="kurang">-</option>
-        </select>
+        
+            <input type="submit" value="*" name="rumus"></input>
+            <input type="submit" value="+" name="rumus"></input>
+            <input type="submit" value="/" name="rumus"></input>
+            <input type="submit" value="-" name="rumus"></input>
+
 <br><br>
         <?php
 
@@ -29,7 +29,7 @@
              $hsil = 0;
         }else{
             
-            if($rumus == 'kali'){
+            if($rumus == '*'){
                 function perkalian($n1,$n2)
                 {
                     $nilai1 = $n1;
@@ -40,7 +40,7 @@
                 $hsil = perkalian($n1, $n2);
             }
 
-            if($rumus == 'kurang'){
+            if($rumus == '-'){
                 function pengurangan($n1,$n2)
                 {
                     $nilai1 = $n1;
@@ -51,7 +51,7 @@
                 $hsil = pengurangan($n1 , $n2);
             }
 
-            if($rumus == 'bagi'){
+            if($rumus == '/'){
                 function pembagian($n1,$n2)
                 {
                     $nilai1 = $n1;
@@ -62,7 +62,7 @@
                 $hsil = pembagian($n1 , $n2);
             }
 
-            if($rumus == 'tambah'){
+            if($rumus == '+'){
                 function pertambahan($n1,$n2)
                 {
                     $nilai1 = $n1;
@@ -78,7 +78,7 @@
         
       Hasil =  <input type="number" disabled value="<?= $hsil?>">
         <br><br>
-        <input type="submit" name="hitung" value="hasil">
+        
 
        
 </form>
