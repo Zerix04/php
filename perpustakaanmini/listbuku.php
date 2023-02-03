@@ -67,14 +67,14 @@
 
         $no = 1;
         while ($data = mysqli_fetch_object($query)) {
-            echo "
+        ?> "
             
             <tr>
-            <td>$no</td>
-            <td>$data->judul_buku</td>
-            <td>$data->penulis</td>
-            <td>$data->penerbit</td>
-            <td><img src='images/$data->gambar' width='100px'></td>
+            <td><?=$no?></td>
+            <td><?=$data->judul?></td>
+            <td><?=$data->penulis?></td>
+            <td><?=$data->penerbit?></td>
+            <td><img src='images/<?=$data->gambar?>' width='100px'></td>
             <td>
             <div class='ubah'>
 
@@ -82,14 +82,15 @@
              
             </div>
 
-            <div class='hapus'>
+            <div  class='hapus'>
 
-             <a href='hapus_buku.php?id=<?= $data->id_buku?>'  onclick='return confirm('yakin?');'>Hapus</a>
+             <a href='hapus_buku.php?id=<?= $data->id_buku?>'   onclick="return confirm('yakin?');">Hapus</a>
 
             </div>
 
             </td>
-            </tr>";
+            </tr>;
+            <?=
             $no++;
         }
         ?>
